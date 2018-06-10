@@ -1,11 +1,11 @@
 # metadefender
 
 #packages to install 
-sudo apt install python3-pip 
-pip3 install py_essentials
+> sudo apt install python3-pip 
+> pip3 install py_essentials
 
 #scan the file 
-run this command: > python3 hashtest.py filename.txt 
+> python3 hashtest.py filename.txt 
 
 #scanning file should be in the right path
 > python3 hashtest.py ../filename.txt 
