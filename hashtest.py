@@ -1,7 +1,7 @@
 """
 Aung Phyo
 06/10/2018
-following coding can scan the file for malware check
+following coding can scan the file for threat check
 using the metadefender API from https://portal.opswat.com/
 
 """
@@ -21,7 +21,7 @@ hashMD5 = hs.fileChecksum(sys.argv[1],"md5");
 url = "https://api.metadefender.com/v2/hash/" + str(hash1)
 
 headers = {
-'apikey': "332a720d6a8bddbbe803d000b96697ed"
+'apikey': "API_KEY"
 }
 
 #request the url and create the json object
