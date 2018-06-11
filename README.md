@@ -6,6 +6,9 @@
 #go into the repo
 > cd repo 
 
+#Adding API Key
+> using the editor to open the hashtest.py and adding the API_KEY
+
 #packages to install 
 > sudo apt install python3-pip 
 
