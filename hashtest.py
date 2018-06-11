@@ -21,7 +21,8 @@ hashMD5 = hs.fileChecksum(sys.argv[1],"md5");
 url = "https://api.metadefender.com/v2/hash/" + str(hash1)
 
 headers = {
-'apikey': "API_KEY"
+'apikey': "API_KEY",
+'file-metadata' : "1"
 }
 
 #request the url and create the json object
@@ -44,6 +45,13 @@ if  dataid == 'Not Found':
         dstring.update({pair[0]: pair[1][1:-1]})
 
     response2 = requests.get('https://api.metadefender.com/v2/file/' + str(dstring['{"data_id"']), headers=headers).json()
+
+    #checking the upload file is 100 percent scanned
+    while response2['scan_results']['progress_percentage'] != 100:
+        response2 = requests.get('https://api.metadefender.com/v2/file/' + str(dstring['{"data_id"']), headers=headers).json()
+        if response2['scan_results']['progress_percentage'] == 100:
+            continue
+
     sfile2 = response2['file_info']
     filename2 = sfile2['display_name']
     print()
